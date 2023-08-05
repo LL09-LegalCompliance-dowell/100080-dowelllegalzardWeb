@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/LL09-LegalCompliance-dowell/100080-dowelllegalzardWeb.git/static/css/main.033db069.css",
+    "main.js": "/LL09-LegalCompliance-dowell/100080-dowelllegalzardWeb.git/static/js/main.d6d5c7f0.js",
+    "index.html": "/LL09-LegalCompliance-dowell/100080-dowelllegalzardWeb.git/index.html",
+    "main.033db069.css.map": "/LL09-LegalCompliance-dowell/100080-dowelllegalzardWeb.git/static/css/main.033db069.css.map",
+    "main.d6d5c7f0.js.map": "/LL09-LegalCompliance-dowell/100080-dowelllegalzardWeb.git/static/js/main.d6d5c7f0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.033db069.css",
+    "static/js/main.d6d5c7f0.js"
+  ]
+}
