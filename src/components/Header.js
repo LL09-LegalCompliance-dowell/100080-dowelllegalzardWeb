@@ -1,18 +1,21 @@
 import { useState } from "react";
 import logo from "../assets/logo.png";
 import account from "../assets/Account circle.png";
-import DropDown from "./DropDown";
+
 import { AiOutlineMenu } from "react-icons/ai";
+import HeaderNavigation from "./HeaderNavigation";
+import ReactFlagsSelect from "react-flags-select";
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const [selectedLanguagee, setSelectedLanguagee] = useState("US");
   const handleMenuClick = () => {
     setIsMenuOpen(!isMenuOpen);
   };
   return (
     <>
       <header className="border-b border-gray-300 py-2 ">
-        <div className="flex items-center   sm:justify-between mx-2">
+        <div className="flex items-center   sm:justify-between ml-10 mr-3">
           <div className="sm:hidden">
             <AiOutlineMenu
               onClick={handleMenuClick}
@@ -20,52 +23,37 @@ const Header = () => {
               size={30}
             />
           </div>
-          <img className="ml-5 sm:ml-0" src={logo} alt="" width={40} height={20} />
-          <ul className="hidden sm:flex flex-row items-center text-xs lg:text-sm xl:text-base font-normal text-black space-y-2 lg:space-y-0 lg:space-x-3">
-            <li className="px-3 sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold text-Primary ">
-              <a href="#a">Home</a>
-            </li>
-            <li className="px-3">
-              <a href="#a">Open Source License Compatibility</a>
-            </li>
-            <li className="px-3">
-              <a href="#a">Software License</a>
-            </li>
-            <li className="px-3">
-              <a href="#a">Agreement Compliance</a>
-            </li>
-            <li className="px-3">
-              <a href="#a">About Us</a>
-            </li>
-            <li className="px-3">
-              <a href="#a">Contact Us</a>
-            </li>
-          </ul>
+          <img
+            className="ml-5 sm:ml-0"
+            src={logo}
+            alt=""
+            width={66}
+            height={52}
+          />
+          <HeaderNavigation top={true} />
+          <div className="ml-auto sm:ml-0"></div>
+          <ReactFlagsSelect
+            selectButtonClassName="h-8  mt-2  "
+            selected={selectedLanguagee}
+            countries={["US", "IN", "FR", "CN", "ES", "JP", "PT"]}
+            customLabels={{
+              US: "English",
+              IN: "हिंदी",
+              FR: "Français",
+              CN: "简体中文",
+              ES: "Español",
+              JP: "日本語",
+              PT: "Português",
+            }}
+            onSelect={(code) => {
+              setSelectedLanguagee(code);
+            }}
+          />
 
-          <DropDown style="ml-auto mr-3"/>
-          <img src={account} alt="" width={40} height={20} />
+          <img src={account} alt="" width={50} height={30} />
         </div>
       </header>
-      <ul className={`${isMenuOpen ? "left-0" : "hidden"} lg:hidden `}>
-        <li className="px-3 sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold text-Primary ">
-          <a href="#a">Home</a>
-        </li>
-        <li className="px-3">
-          <a href="#a">Open Source License Compatibility</a>
-        </li>
-        <li className="px-3">
-          <a href="#a">Software License</a>
-        </li>
-        <li className="px-3">
-          <a href="#a">Agreement Compliance</a>
-        </li>
-        <li className="px-3">
-          <a href="#a">About Us</a>
-        </li>
-        <li className="px-3">
-          <a href="#a">Contact Us</a>
-        </li>
-      </ul>
+      <HeaderNavigation top={false} isMenuOpen={isMenuOpen} />
     </>
   );
 };
