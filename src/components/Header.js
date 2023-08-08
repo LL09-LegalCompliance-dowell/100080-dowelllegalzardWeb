@@ -5,13 +5,11 @@ import account from "../assets/Account circle.png";
 import { AiOutlineMenu } from "react-icons/ai";
 import HeaderNavigation from "./HeaderNavigation";
 import ReactFlagsSelect from "react-flags-select";
-
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+const Header = ({handleMenuClick}) => {
+  
   const [selectedLanguagee, setSelectedLanguagee] = useState("US");
-  const handleMenuClick = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  
+ 
   return (
     <>
       <header className="border-b border-gray-300 py-2 ">
@@ -30,7 +28,7 @@ const Header = () => {
             width={66}
             height={52}
           />
-          <HeaderNavigation top={true} />
+          <HeaderNavigation top={true}  />
           <div className="ml-auto sm:ml-0"></div>
           <ReactFlagsSelect
             selectButtonClassName="h-8  mt-2  "
@@ -53,7 +51,6 @@ const Header = () => {
           <img src={account} alt="" width={50} height={30} />
         </div>
       </header>
-      <HeaderNavigation top={false} isMenuOpen={isMenuOpen} />
     </>
   );
 };
