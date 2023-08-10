@@ -7,14 +7,21 @@ import { useState } from "react";
 import Header from "./components/Header";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Slider from "./components/Slider";
+import { useEffect } from "react";
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-
+console.log(isMenuOpen)
   const handleMenuClick = () => {
     setIsMenuOpen(!isMenuOpen);
   };
- 
+ useEffect(()=>{
+  if(isMenuOpen){
+    document.body.classList.add('no-scroll');
+  }else{
+    document.body.classList.remove('no-scroll');
+  }
+ },[isMenuOpen])
   return (
     <Router>
       <Slider isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />

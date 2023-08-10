@@ -1,10 +1,15 @@
 import React from "react";
 import backgroundImage from "../assets/Home.png";
 import WelcomeCard from "../components/WelcomeCard";
-import softwarlicense from "../assets/softwarlicense.png";
 import agreementCompliance from "../assets/agreementCompliance.png";
 import services from "../assets/services.png";
-import { Link } from "react-router-dom";
+import softwarlicense from "../assets/softwarlicense.png";
+import ProductsServicesCard from "../components/Products&ServicesCard";
+import mostVisited1 from "../assets/mostVisited1.png";
+import mostVisited2 from "../assets/mostVisited2.png";
+import mostVisited3 from "../assets/mostVisited3.png";
+import mostVisited4 from "../assets/mostVisited4.png";
+import MostVisitedCard from "../components/MostVisitedCard";
 const HomeScreen = () => {
   return (
     <div className="h-screen">
@@ -18,109 +23,34 @@ const HomeScreen = () => {
         <p className="text-2xl font-semibold  text-black">Product & Services</p>
         <div className="overflow-x-auto ">
           <div className="flex my-6 p-4 justify-between space-x-4 mx-3 sm:mx-14">
-            <div className="flex-none flex flex-col justify-center items-center rounded-xl w-52 h-72 sm:w-80 sm:h-96 bg-gradient-to-br from-green-400 to-green-200">
-              <img
-                className="mr-2 sm:w-32 sm:h-32 w-16 h-16"
-                src={softwarlicense}
-                alt=""
-               
-              />
-              <p className="text-lg  sm:text-2xl font-medium">Software License</p>
-              <p className="text-sm sm:text-xl font-light text-center my-2">
-                Scroll through our list of software licenses curated just for
-                you
-              </p>
-              <button className="bg-black text-white rounded-md w-36 h-8 mt-12 ">
-                <Link to="/OpenSourceLicenseCompatibility">Explore Now</Link>
-              </button>
-            </div>
-            <div className="flex-none flex flex-col justify-center items-center rounded-xl w-52 h-72 sm:w-80 sm:h-96 bg-gradient-to-br from-green-400 to-green-200">
-              <img
-                className="mr-2 sm:w-32 sm:h-32 w-16 h-16"
-                src={agreementCompliance}
-                alt=""
-                
-              />
-              <p className="text-lg  sm:text-2xl font-medium">Agreement Compliance</p>
-              <p className="text-sm sm:text-xl font-light text-center my-2">
-                Generate policies using our agreement compliance system
-              </p>
-              <button className="bg-black text-white rounded-md w-36 h-8 mt-12 ">
-                <Link to="/OpenSourceLicenseCompatibility">Explore Now</Link>
-              </button>
-            </div>
-            <div className="flex-none flex flex-col justify-center items-center rounded-xl w-52 h-72 sm:w-80 sm:h-96 bg-gradient-to-br from-green-400 to-green-200">
-              <img
-                className="mr-2 sm:w-32 sm:h-32 w-16 h-16"
-                src={services}
-                alt=""
-
-              />
-              <p className="text-lg  sm:text-2xl font-medium">Other Legal Compliance</p>
-              <p className="text-sm sm:text-xl font-light text-center my-2">
-                Check out our other products & services provided
-              </p>
-              <button className="bg-black text-white rounded-md w-36 h-8 mt-12 ">
-                <Link to="/OpenSourceLicenseCompatibility">Explore Now</Link>
-              </button>
-            </div>
+            <ProductsServicesCard
+              title="Software License"
+              subTitle="Check your Open Source License Compatibility"
+              Image={softwarlicense}
+            />
+            <ProductsServicesCard
+              title="Agreement Compliance"
+              subTitle="Generate policies using our agreement compliance system"
+              Image={agreementCompliance}
+            />
+            <ProductsServicesCard
+              title="Other Legal Compliance"
+              subTitle="Check out our other products & services provided"
+              Image={services}
+            />
           </div>
         </div>
       </div>
+      <div className="mx-5 my-5 sm:mx-24 sm:my-11">
+        <p className="text-2xl font-semibold  text-black">Most Visited</p>
+        <div className="my-6 mx-5">
+          <MostVisitedCard image={mostVisited1} text="Apache vs MIT Compatibility result"/>
+          <MostVisitedCard image={mostVisited2} text="GNU GPL v 1.0"/>
+          <MostVisitedCard image={mostVisited3} text="Apache vs LGPL compatibility results"/>
+          <MostVisitedCard image={mostVisited4} text="PHP License 3.01"/>
 
-      {/* <div className="overflow-x-auto bg-red-600 ">
-          <div className="flex my-6 justify-center ">
-            <div className="flex-none flex flex-col justify-center items-center rounded-xl w-80 h-96 bg-gradient-to-br from-green-400 to-green-200  mr-14 ">
-              <img
-                className="mr-2"
-                src={softwarlicense}
-                alt=""
-                width={130}
-                height={130}
-              />
-              <p className="text-2xl font-medium">Software License</p>
-              <p className="text-xl font-light text-center my-2">
-                Scroll through our list of software licenses curated just for
-                you
-              </p>
-              <button className="bg-black text-white rounded-md w-36 h-8 mt-12 ">
-                <Link to="/OpenSourceLicenseCompatibility">Explore Now</Link>
-              </button>
-            </div>
-            <div className="flex-none flex flex-col justify-center items-center rounded-xl w-80 h-96 bg-gradient-to-br from-green-400 to-green-200  mr-14">
-              <img
-                className="mr-2"
-                src={agreementCompliance}
-                alt=""
-                width={130}
-                height={130}
-              />
-              <p className="text-2xl font-medium">Agreement Compliance</p>
-              <p className="text-xl font-light text-center my-2">
-                Generate policies using our agreement compliance system
-              </p>
-              <button className="bg-black text-white rounded-md w-36 h-8 mt-12 ">
-                <Link to="/OpenSourceLicenseCompatibility">Explore Now</Link>
-              </button>
-            </div>
-            <div className="flex-none flex flex-col justify-center items-center rounded-xl w-80 h-96 bg-gradient-to-br from-green-400 to-green-200  mr-14">
-              <img
-                className="mr-2"
-                src={services}
-                alt=""
-                width={130}
-                height={130}
-              />
-              <p className="text-2xl font-medium">Other Legal Compliance</p>
-              <p className="text-xl font-light text-center my-2">
-                Check out our other products & services provided
-              </p>
-              <button className="bg-black text-white rounded-md w-36 h-8 mt-12 ">
-                <Link to="/OpenSourceLicenseCompatibility">Explore Now</Link>
-              </button>
-            </div>
-          </div>
-        </div> */}
+        </div>
+      </div>
     </div>
   );
 };

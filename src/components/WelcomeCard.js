@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import CompatibilityLogo from "../assets/Compatibility Logo.png";
 const WelcomeCard = () => {
   return (
-    <div className="bg-white bg-opacity-60 sm:h-3/4  sm:w-4/5  verySamll:w-96 h-56 w-80  rounded-xl flex flex-row justify-evenly items-center">
+    <div className="bg-white bg-opacity-60 sm:h-3/4  sm:w-4/5  h-56 w-80  rounded-xl flex flex-row justify-evenly items-center">
       <div className="w-2/4 flex flex-col items-center">
         <p className="md:text-5xl sm:text-4xl text-base font-bold text-center mb-7 sm-mb-24 ">
           Open Source License Compatibility
