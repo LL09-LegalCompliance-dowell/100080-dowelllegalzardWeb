@@ -10,7 +10,6 @@ import { Link } from "react-router-dom";
 const Slider = ({ isMenuOpen, setIsMenuOpen }) => {
   const location = useLocation();
   const currentRoute = location.pathname;
-  console.log(isMenuOpen);
   useEffect(() => {
     setIsMenuOpen(false);
   }, [setIsMenuOpen, location]);

@@ -10,11 +10,11 @@ import mostVisited2 from "../assets/mostVisited2.png";
 import mostVisited3 from "../assets/mostVisited3.png";
 import mostVisited4 from "../assets/mostVisited4.png";
 import MostVisitedCard from "../components/MostVisitedCard";
-const HomeScreen = () => {
+const HomeScreen = ({ setIsMenuOpen }) => {
   return (
-    <div className="h-screen">
+    <div className="min-h-screen" onClick={() => setIsMenuOpen(false)}>
       <div
-        className="sm:h-5/6  h-64 w-full bg-cover   bg-no-repeat  bg-top flex justify-center items-center"
+        className="customH  h-64 w-full bg-cover   bg-no-repeat  bg-top flex justify-center items-center"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
         <WelcomeCard />
@@ -44,11 +44,16 @@ const HomeScreen = () => {
       <div className="mx-5 my-5 sm:mx-24 sm:my-11">
         <p className="text-2xl font-semibold  text-black">Most Visited</p>
         <div className="my-6 mx-5">
-          <MostVisitedCard image={mostVisited1} text="Apache vs MIT Compatibility result"/>
-          <MostVisitedCard image={mostVisited2} text="GNU GPL v 1.0"/>
-          <MostVisitedCard image={mostVisited3} text="Apache vs LGPL compatibility results"/>
-          <MostVisitedCard image={mostVisited4} text="PHP License 3.01"/>
-
+          <MostVisitedCard
+            image={mostVisited1}
+            text="Apache vs MIT Compatibility result"
+          />
+          <MostVisitedCard image={mostVisited2} text="GNU GPL v 1.0" />
+          <MostVisitedCard
+            image={mostVisited3}
+            text="Apache vs LGPL compatibility results"
+          />
+          <MostVisitedCard image={mostVisited4} text="PHP License 3.01" />
         </div>
       </div>
     </div>
