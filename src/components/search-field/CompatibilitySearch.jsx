@@ -19,15 +19,17 @@ const CompatibilitySearch = () => {
     }
 
     const handleToggleExitOne = ()=>{
-        setShowExitOne(!showExitOne);
+        setLicenseOneInput({ licenseOneVlaue:'' })
+        setShowExitOne(showExitOne);
+    }
+    const handleToggleExitTwo = ()=>{
+        setShowExitTwo(showExitTwo);
+        setLicenseTwoInput({ licenseTwoVlaue:'' })
     }
 
     const compatibilityCheck = ()=>{
         console.log(licenseOneInput.licenseOneVlaue, '********************')
-        console.log(licenseOneInput.licenseOneVlaue.length, '********************')
-        if(licenseOneInput.licenseOneVlaue.length >= 1){
-            alert('yes')
-        }
+        
     }
   return (
     <div className='w-full h-screen px-10'>
@@ -38,18 +40,20 @@ const CompatibilitySearch = () => {
                 name='licenseOneVlaue'
                 val={licenseOneInput.licenseOneVlaue}
                 handleChange={licenseOneHandleChange}
-                showExitOne={showExitOne}
-                handleToggleExitOne={handleToggleExitOne}
+                showExit={showExitOne}
+                handleToggleExit={handleToggleExitOne}
              />
-            <img className='md:translate-y-10' src={searchSeperator} alt="" />
+            <img className='md:translate-y-10 w-24 h-24 md:w-64 md:h-64' src={searchSeperator} alt="" />
             <SearchInput 
                 licenseType='2'
                 name='licenseTwoVlaue'
                 val={licenseTwoInput.licenseTwoVlaue}
                 handleChange={licenseTwoHandleChange}
+                showExit={showExitTwo}
+                handleToggleExit={handleToggleExitTwo}
              />
         </div>
-        <div className='w-3/12 m-auto mt-10'>
+        <div className='md:w-3/12 m-auto mt-10'>
             <Button onClick={compatibilityCheck}>Check Compatibility</Button>
         </div>
     </div>
