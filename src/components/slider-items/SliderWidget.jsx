@@ -3,7 +3,7 @@ import { Button } from '../button';
 
 const SliderWidget = ({ licenseImage, title, content }) => {
   return (
-    <div className='w-9/12 bg-white/60 m-auto px-10 py-[5rem] rounded-[0.5rem]'>
+    <div className='w-9/12 bg-white/60 m-auto px-10 py-[3rem] rounded-[0.5rem]'>
       <div className='flex justify-between px-10'>
         <div>
             <img src={licenseImage} alt="" />
