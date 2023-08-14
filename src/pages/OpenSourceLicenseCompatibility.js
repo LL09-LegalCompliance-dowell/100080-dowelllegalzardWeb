@@ -1,11 +1,10 @@
 import React from 'react';
-import { Button } from '../components/button';
+import { LicenseSlider } from '../components/slider-items';
 
 const OpenSourceLicenseCompatibility = () => {
   return (
     <div>
-      This is Open Source License Compatibility Screen
-      <Button>hello button</Button>
+      <LicenseSlider />
     </div>
   )
 }
