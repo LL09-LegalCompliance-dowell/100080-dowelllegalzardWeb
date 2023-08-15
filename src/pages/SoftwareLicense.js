@@ -1,8 +1,8 @@
 import React from 'react'
 
-const SoftwareLicense = () => {
+const SoftwareLicense = ({setIsMenuOpen}) => {
   return (
-    <div>
+    <div className='h-screen' onClick={()=>setIsMenuOpen(false)}>
       This is Software License  Screen
     </div>
   )

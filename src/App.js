@@ -8,10 +8,10 @@ import Header from "./components/Header";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Slider from "./components/Slider";
 import { useEffect } from "react";
+import Footer from "./components/Footer";
+
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-console.log(isMenuOpen)
   const handleMenuClick = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -26,16 +26,19 @@ console.log(isMenuOpen)
     <Router>
       <Slider isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <Header isMenuOpen={isMenuOpen} handleMenuClick={handleMenuClick} />
-
+      
       <Routes>
-        <Route path="/" exact Component={HomeScreen} />
+        <Route path="/" exact element={<HomeScreen setIsMenuOpen={setIsMenuOpen} />} />
         <Route
           path="/OpenSourceLicenseCompatibility"
-          Component={OpenSourceLicenseCompatibility}
+          element={<OpenSourceLicenseCompatibility setIsMenuOpen={setIsMenuOpen}/>}
         />
-        <Route path="/SoftwareLicense" Component={SoftwareLicense} />
-        <Route path="/AgreementCompliance" Component={AgreementCompliance} />
+        <Route path="/SoftwareLicense" element={<SoftwareLicense setIsMenuOpen={setIsMenuOpen}/>} />
+        <Route path="/AgreementCompliance" element={<AgreementCompliance setIsMenuOpen={setIsMenuOpen}/>} />
+        
       </Routes>
+      <Footer/>
+      
     </Router>
   );
 }
