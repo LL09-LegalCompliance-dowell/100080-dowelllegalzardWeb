@@ -1,6 +1,4 @@
 import React from 'react';
-import searchIcon from '../../assets/svg/search-icon.svg';
-import removeIcon from '../../assets/svg/remove-icon.svg';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { MdOutlineCancel } from 'react-icons/md';
 
