@@ -1,10 +1,15 @@
-import React from 'react'
+import React from 'react';
+import { LicenseSlider } from '../components/slider-items';
+import { CompatibilitySearch } from '../components/search-field';
+import { CompatibilityAnalysis } from '../components/compatibility-results';
 
 const OpenSourceLicenseCompatibility = () => {
   return (
-    <div>
-      This is Open Source License Compatibility Screen
-    </div>
+    <>
+      <LicenseSlider/>
+      <CompatibilitySearch/>
+      <CompatibilityAnalysis/>
+    </>
   )
 }
 
