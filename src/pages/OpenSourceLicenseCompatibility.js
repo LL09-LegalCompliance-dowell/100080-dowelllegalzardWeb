@@ -3,7 +3,7 @@ import { LicenseSlider } from '../components/slider-items';
 import { CompatibilitySearch } from '../components/search-field';
 import { CompatibilityAnalysis } from '../components/compatibility-results';
 
-const OpenSourceLicenseCompatibility = () => {
+const OpenSourceLicenseCompatibility = ({setIsMenuOpen}) => {
   return (
     <>
       <LicenseSlider/>

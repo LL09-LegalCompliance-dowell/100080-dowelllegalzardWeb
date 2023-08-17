@@ -13,4 +13,12 @@
   .slide{
     left: 0; 
   }
-
+   .no-scroll{
+    overflow: hidden ;
+  }
+  @media  (min-width: 640px) {
+    .customH{
+      height: 600px;
+    }
+  }
+  

@@ -11,7 +11,7 @@ const Header = ({ handleMenuClick,isMenuOpen }) => {
   return (
     <>
       <header className="border-b border-gray-300 py-2 ">
-        <div className="flex items-center   sm:justify-between ml-10 mr-3">
+        <div className="flex items-center sm:justify-between ml-10 mr-3">
           <div className="sm:hidden">
             <AiOutlineMenu
               onClick={handleMenuClick}

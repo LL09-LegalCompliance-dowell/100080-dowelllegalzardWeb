@@ -1,8 +1,8 @@
 import React from 'react'
 
-const AgreementCompliance = () => {
+const AgreementCompliance = ({setIsMenuOpen}) => {
   return (
-    <div>
+    <div className='h-screen' onClick={()=>setIsMenuOpen(false)}>
       This is Agreement Compliance Screen
     </div>
   )
