@@ -32,7 +32,7 @@ const CompatibilitySearch = () => {
         
     }
   return (
-    <div className='w-full h-screen px-10'>
+    <div className='w-full h-auto px-10'>
         <h3 className='text-sm font-normal my-10'>Check License Compatibility</h3>
         <div className='md:w-9/12 flex flex-col md:flex-row items-center md:gap-5 m-auto'>
             <SearchInput 
