@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/100080-dowelllegalzardWeb/static/css/main.e74b6f52.css",
-    "main.js": "/100080-dowelllegalzardWeb/static/js/main.f25f1b92.js",
+    "main.js": "/100080-dowelllegalzardWeb/static/js/main.32f0e3d5.js",
     "static/media/Home.png": "/100080-dowelllegalzardWeb/static/media/Home.704f2285456924db43b1.png",
     "static/media/slider-bg.jpg": "/100080-dowelllegalzardWeb/static/media/slider-bg.18535e4a7592c82b352e.jpg",
     "static/media/Compatibility Logo.png": "/100080-dowelllegalzardWeb/static/media/Compatibility Logo.b106a5aedc894e5ca9cf.png",
@@ -13,10 +13,10 @@
     "static/media/slider-child-bg.png": "/100080-dowelllegalzardWeb/static/media/slider-child-bg.7f3ced864892e1af9134.png",
     "index.html": "/100080-dowelllegalzardWeb/index.html",
     "main.e74b6f52.css.map": "/100080-dowelllegalzardWeb/static/css/main.e74b6f52.css.map",
-    "main.f25f1b92.js.map": "/100080-dowelllegalzardWeb/static/js/main.f25f1b92.js.map"
+    "main.32f0e3d5.js.map": "/100080-dowelllegalzardWeb/static/js/main.32f0e3d5.js.map"
   },
   "entrypoints": [
     "static/css/main.e74b6f52.css",
-    "static/js/main.f25f1b92.js"
+    "static/js/main.32f0e3d5.js"
   ]
 }
