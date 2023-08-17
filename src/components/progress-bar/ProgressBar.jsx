@@ -3,7 +3,7 @@ import React,{ useState,useEffect } from 'react';
 const ProgressBar = () => {
     const [progressCount, setProgressCount]  = useState(0);
     const initialCount = 10;
-    const maxCount = 50;
+    const maxCount = 78;
 
     useEffect(()=>{
         const progressTimer = setInterval(()=>{
@@ -21,7 +21,6 @@ const ProgressBar = () => {
         }
     },[initialCount, maxCount]);
 
-    console.log(progressCount, '==============prog count')
 
   return (
         <div>

@@ -45,19 +45,16 @@ const SliderItems = () => {
                 title='Apache vs MIT'
                 content='“Highly recommended and Can be used together in a project.”'
             /> */}
-            {/* <SliderWidget 
+            <SliderWidget 
                 licenseImage={licenseImage}
                 title='windows computer series'
                 content='“Highly recommended and Can be used together in a project.”'
-            /> */}
+            />
 
 
-            <div className='h-64 flex ml-10 gap-10'>
+            {/* <div className='h-64 flex ml-10 gap-10'>
               {sliderItems.slice(activeIndex, activeIndex + 2).map((item) => (
                   <div key={item.id} className={`${item.id===activeIndex+1 ? 'flex-1 bg-white' : 'bg-red-500'}`}>
-                    {/* <div className=''>
-                      {item.name}
-                    </div> */}
                     <SliderWidget 
                         licenseImage={licenseImage}
                         title={item.name}
@@ -69,7 +66,7 @@ const SliderItems = () => {
             <div>
             <button onClick={handlePrev}>prev</button>
                 <button onClick={handleNext}>next</button>
-            </div>
+            </div> */}
             
     </div>
   )
