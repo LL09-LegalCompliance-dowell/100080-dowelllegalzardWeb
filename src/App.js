@@ -34,7 +34,7 @@ function App() {
           element={<OpenSourceLicenseCompatibility setIsMenuOpen={setIsMenuOpen}/>}
         />
         <Route path="/SoftwareLicense" element={<SoftwareLicense setIsMenuOpen={setIsMenuOpen}/>} />
-        <Route path="/AgreementCompliance" element={<AgreementCompliance setIsMenuOpen={setIsMenuOpen}/>} />
+        <Route path="/AgreementCompliance/*" element={<AgreementCompliance setIsMenuOpen={setIsMenuOpen}/>} />
         
       </Routes>
       <Footer/>
