@@ -5,7 +5,7 @@ import SoftwareLicense from "./pages/SoftwareLicense";
 import AgreementCompliance from "./pages/AgreementCompliance";
 import { useState } from "react";
 import Header from "./components/Header";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import Slider from "./components/Slider";
 import { useEffect } from "react";
 import Footer from "./components/Footer";
@@ -23,7 +23,7 @@ function App() {
   }
  },[isMenuOpen])
   return (
-    <Router>
+    <HashRouter>
       <Slider isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <Header isMenuOpen={isMenuOpen} handleMenuClick={handleMenuClick} />
       
@@ -39,7 +39,7 @@ function App() {
       </Routes>
       <Footer/>
       
-    </Router>
+    </HashRouter>
   );
 }
 
