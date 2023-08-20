@@ -12,33 +12,74 @@ import Footer from "./components/Footer";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
+
   const handleMenuClick = () => {
     setIsMenuOpen(!isMenuOpen);
   };
- useEffect(()=>{
-  if(isMenuOpen){
-    document.body.classList.add('no-scroll');
-  }else{
-    document.body.classList.remove('no-scroll');
+
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    const sessionId = url.searchParams.get("session_id");
+    const id = url.searchParams.get("id");
+    const storedSessionId = localStorage.getItem("session_id");
+    const storedId = localStorage.getItem("id");
+    
+    if (!storedSessionId && !storedId) {
+      if (sessionId && id) {
+        localStorage.setItem("session_id", sessionId);
+        localStorage.setItem("id", id);
+        setLoading(true);
+      } else {
+        window.location.href = "https://100014.pythonanywhere.com/";
+        setLoading(false);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+  }, [isMenuOpen]);
+
+  if (!loading) {
+    return (
+      <div className="w-full h-screen flex items-center justify-center">
+        <h1 className="text-green-600 font-bold text-xl">Loading...</h1>
+      </div>
+    );
   }
- },[isMenuOpen])
+
   return (
     <HashRouter>
       <Slider isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <Header isMenuOpen={isMenuOpen} handleMenuClick={handleMenuClick} />
-      
+
       <Routes>
-        <Route path="/" exact element={<HomeScreen setIsMenuOpen={setIsMenuOpen} />} />
+        <Route
+          path="/"
+          exact
+          element={<HomeScreen setIsMenuOpen={setIsMenuOpen} />}
+        />
         <Route
           path="/OpenSourceLicenseCompatibility"
-          element={<OpenSourceLicenseCompatibility setIsMenuOpen={setIsMenuOpen}/>}
+          element={
+            <OpenSourceLicenseCompatibility setIsMenuOpen={setIsMenuOpen} />
+          }
         />
-        <Route path="/SoftwareLicense" element={<SoftwareLicense setIsMenuOpen={setIsMenuOpen}/>} />
-        <Route path="/AgreementCompliance" element={<AgreementCompliance setIsMenuOpen={setIsMenuOpen}/>} />
-        
+        <Route
+          path="/SoftwareLicense"
+          element={<SoftwareLicense setIsMenuOpen={setIsMenuOpen} />}
+        />
+        <Route
+          path="/AgreementCompliance"
+          element={<AgreementCompliance setIsMenuOpen={setIsMenuOpen} />}
+        />
       </Routes>
-      <Footer/>
-      
+      <Footer />
     </HashRouter>
   );
 }

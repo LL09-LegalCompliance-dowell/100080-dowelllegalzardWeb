@@ -11,29 +11,6 @@ import mostVisited3 from "../assets/mostVisited3.png";
 import mostVisited4 from "../assets/mostVisited4.png";
 import MostVisitedCard from "../components/MostVisitedCard";
 const HomeScreen = ({ setIsMenuOpen }) => {
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    const url = new URL(window.location.href);
-    const sessionId = url.searchParams.get("session_id");
-    const id = url.searchParams.get("id");
-
-    if (sessionId && id) {
-      localStorage.setItem("session_id", sessionId);
-      localStorage.setItem("id", id);
-      setLoading(false);
-    } else {
-      window.location.href = "https://100014.pythonanywhere.com/";
-      setLoading(false);
-    }
-  }, []);
-
-  if (!loading) {
-    return (
-      <div className="w-full h-screen flex items-center justify-center">
-        <h1 className="text-green-600 font-bold text-xl">Loading...</h1>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen" onClick={() => setIsMenuOpen(false)}>
