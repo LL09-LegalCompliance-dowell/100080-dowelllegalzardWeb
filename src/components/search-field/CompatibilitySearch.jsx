@@ -65,7 +65,7 @@ const CompatibilitySearch = () => {
         const payload = {
             license_event_id_one:selectedLicenseOne.eventId,
             license_event_id_two:selectedLicenseTwo.eventId,
-            
+            action_type:'check-compatibility',
         }
         try {
             setLoading(true)
@@ -76,7 +76,6 @@ const CompatibilitySearch = () => {
         }finally{
             setLoading(false);
         }
-        
     }
 
 
