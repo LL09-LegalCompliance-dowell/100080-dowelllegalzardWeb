@@ -10,7 +10,7 @@ const AgreementCompliance = ({setIsMenuOpen}) => {
       
       <Routes> 
         <Route path="/" exact element={<AgreementHome />} />
-        <Route path="/PolicyStartScreen"  element={<PolicyStartScreen />} />
+        <Route path="/PolicyStartScreen/:policyName"  element={<PolicyStartScreen />} />
         
       </Routes>
       </div>
