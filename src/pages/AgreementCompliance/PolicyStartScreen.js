@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import blurLicense from "../../assets/blurLicense.png";
 import CustomButton from "../../components/CustomButton";
 import questionMark from "../../assets/questionMark.png";
@@ -6,12 +6,51 @@ import eye from "../../assets/eye.png";
 import { useParams } from "react-router-dom";
 const PolicyStartScreen = () => {
   const { policyName } = useParams();
+  const [imageUrl, setImageUrl] = useState("");
+  useEffect(() => {
+    switch (policyName) {
+      case "Cookies Policy":
+        setImageUrl(
+          "https://100080.pythonanywhere.com/media/doc/cookies-policy.pdf"
+        );
+        break;
+      case "Software License Policy":
+        setImageUrl(
+          "https://100080.pythonanywhere.com/media/doc/software-license-agreement.pdf"
+        );
+        break;
+      case "Privacy Policy":
+        setImageUrl(
+          "https://100080.pythonanywhere.com/media/doc/website-privacy-policy.pdf"
+        );
+        break;
+      case "Disclaimer":
+        setImageUrl(
+          "https://100080.pythonanywhere.com/media/doc/discliamer-for-website.pdf"
+        );
+        break;
+      case "EULA":
+        setImageUrl(
+          "https://100080.pythonanywhere.com/media/doc/end-user-licensing-agreement.pdf"
+        );
+        break;
+      case "Return & Refund":
+        setImageUrl(
+          "https://100080.pythonanywhere.com/media/doc/return-refund-policy.pdf"
+        );
+        break;
+      case "Website Terms of Use":
+        setImageUrl(
+          "https://100080.pythonanywhere.com/media/doc/website-terms-of-use.pdf"
+        );
+        break;
+      default:
+    }
+  }, [policyName, setImageUrl]);
   return (
     //container
     <div className="px-4 py-10  sm:px-24">
-      <p className="text-black text-2xl font-normal">
-        {policyName} :-
-      </p>
+      <p className="text-black text-2xl font-normal">{policyName} :-</p>
       <div className="flex flex-col items-center pt-10">
         <div
           className="w-80  h-96  bg-contain   bg-no-repeat mb-10 flex items-center"
@@ -19,9 +58,14 @@ const PolicyStartScreen = () => {
         >
           <div className="bg-white w-full h-9 flex justify-center ">
             <img className="" src={eye} alt="" />
-            <p className="text-Primary text-xl font-normal ml-3 underline ">
+            <a
+              href={imageUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="text-Primary text-xl font-normal ml-3 underline "
+            >
               View Sample
-            </p>
+            </a>
           </div>
         </div>
         <CustomButton content="Start Generating" />
