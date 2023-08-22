@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import backgroundImage from "../assets/Home.png";
 import WelcomeCard from "../components/WelcomeCard";
 import agreementCompliance from "../assets/agreementCompliance.png";
@@ -11,6 +11,7 @@ import mostVisited3 from "../assets/mostVisited3.png";
 import mostVisited4 from "../assets/mostVisited4.png";
 import MostVisitedCard from "../components/MostVisitedCard";
 const HomeScreen = ({ setIsMenuOpen }) => {
+
   return (
     <div className="min-h-screen" onClick={() => setIsMenuOpen(false)}>
       <div

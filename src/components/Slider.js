@@ -15,7 +15,7 @@ const Slider = ({ isMenuOpen, setIsMenuOpen }) => {
   }, [setIsMenuOpen, location]);
   return (
     <div
-      className={`sm:hidden slider pt-5 pr-5 pl-3  bg-white flex flex-col ${
+      className={`sm:hidden slider pt-5 pr-5 pl-3  bg-white flex flex-col z-10 ${
         isMenuOpen ? "slide" : ""
       }`}
     >
@@ -65,7 +65,7 @@ const Slider = ({ isMenuOpen, setIsMenuOpen }) => {
         </li>
         <li
           className={` flex flex-row items-center mb-4 text-2xl ${
-            currentRoute === "/AgreementCompliance"
+            currentRoute.includes("/AgreementCompliance")
               ? " text-Primary font-bold "
               : "font-normal"
           } `}

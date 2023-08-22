@@ -46,7 +46,7 @@ const HeaderNavigation = ({ top, isMenuOpen}) => {
       </li>
       <li
         className={` ${
-          currentRoute === "/AgreementCompliance"
+          currentRoute.includes( "/AgreementCompliance")
             ? "sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold text-Primary mx-6"
             : "mr-6"
         } `}
