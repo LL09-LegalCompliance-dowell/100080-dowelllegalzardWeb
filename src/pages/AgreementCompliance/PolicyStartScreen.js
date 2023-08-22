@@ -3,12 +3,14 @@ import blurLicense from "../../assets/blurLicense.png";
 import CustomButton from "../../components/CustomButton";
 import questionMark from "../../assets/questionMark.png";
 import eye from "../../assets/eye.png";
+import { useParams } from "react-router-dom";
 const PolicyStartScreen = () => {
+  const { policyName } = useParams();
   return (
     //container
     <div className="px-4 py-10  sm:px-24">
       <p className="text-black text-2xl font-normal">
-        Software License Policy :-{" "}
+        {policyName} :-
       </p>
       <div className="flex flex-col items-center pt-10">
         <div
