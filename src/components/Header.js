@@ -28,7 +28,7 @@ const Header = ({ handleMenuClick,isMenuOpen }) => {
           />
           <HeaderNavigation top={true} />
           <div className="ml-auto sm:ml-0"></div>
-          {!isMenuOpen &&(<ReactFlagsSelect
+          {/* {!isMenuOpen &&(<ReactFlagsSelect
             selectButtonClassName="h-8  mt-2  "
             selected={selectedLanguagee}
             countries={["US", "IN", "FR", "CN", "ES", "JP", "PT"]}
@@ -44,7 +44,7 @@ const Header = ({ handleMenuClick,isMenuOpen }) => {
             onSelect={(code) => {
               setSelectedLanguagee(code);
             }}
-          />)}
+          />)} */}
           
 
           <img src={account} alt="" width={50} height={30} />
