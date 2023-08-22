@@ -17,8 +17,8 @@ const SearchInput = ({ licenseType, val, name,  handleChange, showExit, handleTo
                 onChange={handleChange}
             />
             <span 
-            onClick={handleToggleExit}
-            className={`absolute right-3 top-3 cursor-pointer ${(val.length < 1 && !showExit) && 'hidden'}`}>
+                onClick={handleToggleExit}
+                className={`absolute right-3 top-3 cursor-pointer ${(val.length < 1 && !showExit) && 'hidden'}`}>
                 <MdOutlineCancel/>
                 </span>
         </div>
