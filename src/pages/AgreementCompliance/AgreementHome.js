@@ -6,7 +6,12 @@ import disclaimer from "../../assets/disclaimer.png";
 import eula from "../../assets/eula.png";
 import return_refund from "../../assets/return&refund.png";
 import websiteTermsOfUse from "../../assets/websiteTermsOfUse.png";
+import { Link } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
 const AgreementHome = () => {
+  const location = useLocation();
+  const currentRoute = location.pathname;
+
   return (
     <div className="pl-10 sm:pl-20 my-5 sm:my-10">
       <p className="text-base- font-normal text-black">
@@ -15,9 +20,11 @@ const AgreementHome = () => {
       <div className="px-5 pt-5 sm:pl-20 sm:pt-10">
         <div className=" flex items-center">
           <img className="mr-10" src={slp} alt="" width={66} height={52} />
+          <Link to={`${currentRoute}/PolicyStartScreen`}>
           <p className="text-Primary text-2xl font-normal underline">
             Software License Policy
           </p>
+          </Link>
         </div>
         <div className=" pt-10 flex items-center">
           <img
