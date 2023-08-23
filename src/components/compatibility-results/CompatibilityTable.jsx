@@ -49,8 +49,8 @@ const CompatibilityTable = ({ licenses }) => {
         <thead>
           <tr>
             <th className='border border-slate-300 py-2 px-5'>Category</th>
-            <th className='border border-slate-300 py-2 px-5'>{licenses?.license_1.license_name}</th>
-            <th className='border border-slate-300 py-2 px-5'>{licenses?.license_2.license_name}</th>
+            <th className='border border-slate-300 py-2 px-5'>{licenses?.license_1?.license_name}</th>
+            <th className='border border-slate-300 py-2 px-5'>{licenses?.license_2?.license_name}</th>
           </tr>
         </thead>
         <tbody>
@@ -69,11 +69,13 @@ const CompatibilityTable = ({ licenses }) => {
               <td></td>
               <td className='text-center text-sm py-5'>Limitations/Disclaimer</td>
             </tr>
-            <tr>
-              <td className='border border-slate-300 py-2 px-5 text-center'>Yes</td>
-              <td className='border border-slate-300 py-2 px-5 text-center'>Yes</td>
-              <td className='border border-slate-300 py-2 px-5 text-center'>No</td>
-            </tr>
+            {licenses?.license_1?.limitations?.map((limitation, index)=>(
+                <tr key={index}>
+                  <td className='border border-slate-300 py-2 px-5 text-center'>{limitation?.action}</td>
+                  <td className={`${limitation?.permission.toLowerCase() === 'no' ? 'text-red-500' : 'text-green'} border border-slate-300 py-2 px-5 text-center`}>{limitation?.permission}</td>
+                  <td className={`${licenses?.license_2?.limitations[index].permission.toLowerCase() === 'no' ? 'text-red-500' : 'text-green'} border border-slate-300 py-2 px-5 text-center`}>{licenses?.license_2?.limitations[index].permission}</td>
+                </tr>
+              ))}
         </tbody>
       </table>
 

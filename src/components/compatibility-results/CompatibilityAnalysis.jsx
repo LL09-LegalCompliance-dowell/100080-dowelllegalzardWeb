@@ -10,7 +10,9 @@ const CompatibilityAnalysis = ({ loadingLicenses, licenses }) => {
   }
 
   return (
-    <div className='md:w-6/12 m-auto p-5 md:p-10 my-10'>
+    <>
+      {licenses?.license_1 ? (
+        <div className='md:w-6/12 m-auto p-5 md:p-10 my-10'>
         <div>
             <div className='flex items-center justify-between gap-5 mb-10'>
                 <div>
@@ -26,7 +28,12 @@ const CompatibilityAnalysis = ({ loadingLicenses, licenses }) => {
         </div>
         <ProgressBar licenses={licenses}/>
         <CompatibilityTable licenses={licenses} />
-    </div>
+      </div>
+      ): <div className='h-96 flex items-center justify-center'>
+          <h2 className='font-medium text-[2rem]'>your results will be displayed here</h2>
+        </div>}
+    </>
+    
   )
 }
 
