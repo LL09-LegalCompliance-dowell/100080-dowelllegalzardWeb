@@ -16,6 +16,7 @@ const CompatibilitySearch = () => {
     const [getlicenses, setGetLicenses] = useState([]);
     const [licenses, setLicences] = useState([])
     const [loading, setLoading] = useState(false);
+    const [loadingLicenses, setLoadingLicenses] = useState(false);
 
     const getLicense = useGetLicense();
     const checkLicense = useCheckLicense()
@@ -68,13 +69,14 @@ const CompatibilitySearch = () => {
             action_type:'check-compatibility',
         }
         try {
-            setLoading(true)
-            const response = await checkLicense(payload);
-            console.log(response);
+            setLoadingLicenses(true)
+            const { data } = await checkLicense(payload);
+            setLicences(data)
+            console.log(data, 'res data*****');
         } catch (error) {
             console.log(error)
         }finally{
-            setLoading(false);
+            setLoadingLicenses(false);
         }
     }
 
@@ -150,7 +152,10 @@ const CompatibilitySearch = () => {
             <Button onClick={compatibilityCheck}>Check Compatibility</Button>
         </div>
 
-        <CompatibilityAnalysis />
+        <CompatibilityAnalysis
+            loadingLicenses={loadingLicenses}
+            licenses={licenses}
+        />
     </div>
   )
 }

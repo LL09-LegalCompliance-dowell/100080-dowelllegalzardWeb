@@ -19,14 +19,22 @@ module.exports = {
         wide: "0.2rem",
       },
       fontWeight: {
-        thin: 200,
-        semiLight: 300,
-        light: 400,
-        normal: 500,
-        medium: 600,
-        bold: 700,
-        smbold: 800,
-        xbold: 900,
+          thin: 200,
+          semiLight: 300,
+          light: 400,
+          normal: 500,
+          medium: 600,
+          bold: 700,
+          smbold: 800,
+          xbold: 900,
+      },
+      extend: {
+        colors: {
+          Primary: '#078F04',
+          green:'#078F04',
+          backgroundTransparent: "#FFFFFF"
+        },
+
       },
     },
   },
