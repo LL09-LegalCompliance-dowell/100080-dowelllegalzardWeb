@@ -4,9 +4,15 @@ import CustomButton from "../../components/CustomButton";
 import questionMark from "../../assets/questionMark.png";
 import eye from "../../assets/eye.png";
 import { useParams } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 const PolicyStartScreen = () => {
+  const navigate = useNavigate();
   const { policyName } = useParams();
   const [imageUrl, setImageUrl] = useState("");
+  const handleButtonPress = () => {
+    // Use history.push to navigate to the desired route
+    navigate('/AgreementCompliance/SLP');
+  };
   useEffect(() => {
     switch (policyName) {
       case "Cookies Policy":
@@ -68,7 +74,7 @@ const PolicyStartScreen = () => {
             </a>
           </div>
         </div>
-        <CustomButton content="Start Generating" />
+        <CustomButton onClick={handleButtonPress} content="Start Generating" />
         <div className="flex items-center mt-8">
           <img className="" src={questionMark} alt="" />
           <p className="text-Primary text-xl font-normal ml-3 underline">
