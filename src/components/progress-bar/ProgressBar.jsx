@@ -1,6 +1,6 @@
 import React,{ useState,useEffect } from 'react';
 
-const ProgressBar = () => {
+const ProgressBar = ({ licenses }) => {
     const [progressCount, setProgressCount]  = useState(0);
     const initialCount = 10;
     const maxCount = 78;
