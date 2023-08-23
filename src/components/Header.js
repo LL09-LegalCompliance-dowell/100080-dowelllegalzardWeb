@@ -11,7 +11,7 @@ const Header = ({ handleMenuClick,isMenuOpen }) => {
   return (
     <>
       <header className="border-b border-gray-300 py-2 ">
-        <div className="flex items-center   sm:justify-between ml-10 mr-3">
+        <div className="flex items-center sm:justify-between ml-10 mr-3">
           <div className="sm:hidden">
             <AiOutlineMenu
               onClick={handleMenuClick}
@@ -28,7 +28,7 @@ const Header = ({ handleMenuClick,isMenuOpen }) => {
           />
           <HeaderNavigation top={true} />
           <div className="ml-auto sm:ml-0"></div>
-          {!isMenuOpen &&(<ReactFlagsSelect
+          {/* {!isMenuOpen &&(<ReactFlagsSelect
             selectButtonClassName="h-8  mt-2  "
             selected={selectedLanguagee}
             countries={["US", "IN", "FR", "CN", "ES", "JP", "PT"]}
@@ -44,7 +44,7 @@ const Header = ({ handleMenuClick,isMenuOpen }) => {
             onSelect={(code) => {
               setSelectedLanguagee(code);
             }}
-          />)}
+          />)} */}
           
 
           <img src={account} alt="" width={50} height={30} />
