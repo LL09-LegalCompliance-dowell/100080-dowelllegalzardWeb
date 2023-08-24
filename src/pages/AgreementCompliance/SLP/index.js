@@ -8,9 +8,12 @@ import Box from "@mui/material/Box";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import SlpFisrtScreen from "./SlpFisrtScreen";
+// import { useSelector,useDispatch } from 'react-redux';
+// import { addData } from "../../../store/policyDataSlice";
 const SlP = () => {
+  //for testing
   const steps = ["", "", ""];
   const [activeStep, setActiveStep] = useState(0);
 
@@ -42,7 +45,8 @@ const SlP = () => {
           </React.Fragment>
         ) : (
           <React.Fragment>
-            <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography>
+            {/* <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography> */}
+            <SlpFisrtScreen/>
             <div className="flex justify-center" >
               <button
                 disabled={activeStep === 0}
