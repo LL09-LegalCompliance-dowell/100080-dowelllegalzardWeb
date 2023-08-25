@@ -1,39 +1,30 @@
 import React from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
-const validationSchema = Yup.object().shape({
-  name: Yup.string().required('Name is required'),
-  email: Yup.string().email('Invalid email').required('Email is required'),
-});
 
-
+import { Formik, Form } from 'formik';
+import CustomInput from '../../../components/CustomInput';
 const SlpFisrtScreen = () => {
-  const handleSubmit = (values) => {
-    console.log(values); // You can do whatever you want with the form values here
-  };
-
-  return (
+return(
+  <div>
     <Formik
-      validationSchema={validationSchema}
-      onSubmit={handleSubmit}
+      initialValues={{
+        name: '',
+        postalAddress:'',
+        registerationNumber:''
+      }}
+      onSubmit={async (values) => {
+        console.log(values)
+        // await new Promise((r) => setTimeout(r, 500));
+        // alert(JSON.stringify(values, null, 2));
+      }}
     >
-      <Form>
-        <div>
-          <label htmlFor="name">Name</label>
-          <Field type="text" id="name" name="name" />
-          <ErrorMessage name="name" component="div" className="error" />
-        </div>
-
-        <div>
-          <label htmlFor="email">Email</label>
-          <Field type="email" id="email" name="email" />
-          <ErrorMessage name="email" component="div" className="error" />
-        </div>
-
-        <button type="submit">Submit</button>
+      <Form className='my-5'>
+       <CustomInput id="name" placeholder="Eg. John Smith Doe" title="Full Name of the Individual:"/>
+       <CustomInput id="postalAddress" placeholder="Eg. 202002" title="Postal Address:"/>
+       <CustomInput id="registerationNumber" placeholder="" title="What is the registration number of the party?"/>
+       <button type='submit'>testConole</button>
       </Form>
     </Formik>
-  );
+  </div>
+)
 }
-
 export default SlpFisrtScreen

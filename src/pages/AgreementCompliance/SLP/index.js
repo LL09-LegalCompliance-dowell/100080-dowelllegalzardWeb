@@ -29,9 +29,9 @@ const SlP = () => {
     <div className=" flex justify-center my-10">
       <Box sx={{ width: "70%" }}>
         <Stepper activeStep={activeStep}>
-          {steps.map((label) => {
+          {steps.map((label,index) => {
             return (
-              <Step key={label}>
+              <Step key={index}>
                 <StepLabel>{label}</StepLabel>
               </Step>
             );

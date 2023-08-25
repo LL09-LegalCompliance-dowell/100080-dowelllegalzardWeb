@@ -10,7 +10,8 @@ module.exports = {
         primary_2:"#489503",
         customRed:"#FF0000",
         backgroundTransparent: "#FFFFFF",
-        footerBackground:"#454545"
+        footerBackground:"#454545",
+        inputBackgroundColor:"#D9D9D9"
       },
     },
   },
